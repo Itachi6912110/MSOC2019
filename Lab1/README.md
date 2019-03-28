@@ -17,3 +17,11 @@
   ```
   make clean
   ```
+
+## References
+- MSOC courses: 
+  http://media.ee.ntu.edu.tw/courses/msoc/slide.html
+- SystemC homepage: 
+  https://www.accellera.org/downloads/standards/systemc
+- SystemC setup: 
+  https://stenlyho.blogspot.com/2008/10/systemc-linux.html?fbclid=IwAR3EsUFrePwy3n8HiIL9a1un5UIVFiG6n1XGw4-d3iKooerJs4jxYYJrN-k
