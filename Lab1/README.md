@@ -19,7 +19,7 @@
   ```
 
 ## References
-- MSOC courses: \n
+- MSOC courses: \\
   http://media.ee.ntu.edu.tw/courses/msoc/slide.html
 - SystemC homepage: \n
   https://www.accellera.org/downloads/standards/systemc
