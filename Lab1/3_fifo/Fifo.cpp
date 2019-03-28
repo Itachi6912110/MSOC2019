@@ -20,6 +20,17 @@ Fifo::~Fifo()
 
 void Fifo::Write(char c)
 {
+	// HW1 Implmented
+	if (n_ == data_.size()-1) {
+		wait(read_event_);
+	}
+	data_[tail_] = c;
+	tail_++;
+	n_++;
+	if (tail_ == data_.size()) {
+		tail_ = 0;
+	}
+	write_event_.notify();
 }
 
 void Fifo::Read(char &c)
@@ -49,9 +60,23 @@ int Fifo::NumAvailable()
 }
 
 bool Fifo::Full(){
+	// HW1 Implemented
+	if(n_ == data_.size()){
+		return true;
+	}
+	else{
+		return false;
+	}
 }
 
 bool Fifo::Empty(){
+	// HW1 Implemented
+	if(n_ == 0){
+		return true;
+	}
+	else{
+		return false;
+	}
 }
 
 void Fifo::ComputeStats()

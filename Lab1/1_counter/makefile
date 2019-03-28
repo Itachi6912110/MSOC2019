@@ -1,8 +1,8 @@
 CC = g++
-CFLAGS = -O3
-SYSTEMC_HOME = /usr/local/systemc-2.3.2
-SC_COMPILE = -I. -I$(SYSTEMC_HOME)/include
-SC_LINK = -L. -L$(SYSTEMC_HOME)/lib-linux64 -Wl,-rpath=$(SYSTEMC_HOME)/lib-linux64/ -lsystemc -lm
+CFLAGS = -std=c++11
+SYSTEMC_HOME = /opt/systemc
+SC_COMPILE = -I$(SYSTEMC_HOME)/include
+SC_LINK = -lsystemc -L$(SYSTEMC_HOME)/lib-linux64
 
 OBJECTS = main.o Counter.o Display.o TestDriver.o
 EXECUTABLE = ex1

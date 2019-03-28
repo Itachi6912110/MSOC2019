@@ -1,6 +1,7 @@
 #include "FIR.h"
 #include <numeric>
 #include <algorithm>
+#include <vector>
 
 FIR::FIR(sc_module_name mname, const std::vector<int> &&coeff):
 	sc_module(mname),
@@ -37,9 +38,24 @@ void FIR::Driver()
 }
 
 void FIR::FirExecution()
-{
+{	
+	int D[coeff_.size()] = {0};
+	
 	while (true) {
-		data_out_.write(data_in_.read() + 100);
+		//data_out_.write(data_in_.read() + 100);
+		int outData = 0;
+
+		// Register Shift
+		for(int i=coeff_.size()-1; i>0; i--){
+			D[i] = D[i-1];
+		}
+		D[0] = data_in_.read();
+
+		// FIR Sum
+		for(int i=0; i<coeff_.size(); i++){
+			outData += D[i] * coeff_[i];
+		}
+		data_out_.write(outData);
 	}
 }
 

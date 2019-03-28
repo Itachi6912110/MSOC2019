@@ -8,6 +8,7 @@ Display::Display(sc_module_name mname): sc_module(mname), old_value_(0)
 	// TODO
 	SC_METHOD(ProcessMethod);
 	sensitive << value_;
+	dont_initialize();
 }
 
 void Display::ProcessMethod()

@@ -28,12 +28,12 @@ void TestDriver::ProcessThread()
 
 	// TODO: Add count down test here
 	for(int i=0; i < 20; i++) wait();
-	enable_.write(false);
-	//up_down_.write(false);
-	for(int i=0; i < 4; i++) wait();
 	//enable_.write(false);
-	//wait();
+	up_down_.write(false);
+	for(int i=0; i < 5; i++) wait();
+	enable_.write(false);
+	wait();
 
 	// What should the value be?
-	assert(value_.read() == 20);
+	assert(value_.read() == 15);
 }
