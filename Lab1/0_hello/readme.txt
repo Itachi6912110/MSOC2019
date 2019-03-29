@@ -1,3 +1,3 @@
-g++sc *.cpp -c
-g++sc *.o
-./a.out
+make
+./ex1
+make clean
