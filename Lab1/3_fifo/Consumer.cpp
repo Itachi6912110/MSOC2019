@@ -11,8 +11,8 @@ void Consumer::Main()
 {
 	while (true) {
 		char c;
-		const bool ALWAYS_BLOCK = false;
-		//const bool ALWAYS_BLOCK = true;
+		//const bool ALWAYS_BLOCK = false;
+		const bool ALWAYS_BLOCK = true;
 		auto PrintGuard = [](char c) -> char { return isprint(c) and not isspace(c) ? c : '_'; };
 		if (ALWAYS_BLOCK || in_->Empty()) {
 			cout << "Read: Blocking from " << sc_time_stamp();
